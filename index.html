@@ -675,6 +675,11 @@ footer {
       <div class="footer-contact-form">
         <p>Contact Us</p>
         <form action="https://formsubmit.co/0dee0954dc19d83ff2ec2ffb48f954a3" method="POST">
+         <!--Honeypot-->
+         <input type="text" name="_honey" style="display: none;">
+         <!--Disable Captcha-->
+         <input type="hidden" name="_captcha" value="false">
+         
           <input type="text" placeholder="Name" name="Name" required />
           <input type="email" placeholder="Email" name="Email" required />
           <textarea placeholder="Message" name="Message" required></textarea>
