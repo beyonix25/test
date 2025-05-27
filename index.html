@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handy 4 London</title>
+  <script src="handy4london.js" defer></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #000000;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #000000;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+   nav{
+  background-color: rgb(0, 0, 0);
+  display: inline;
+  height: 100%;
+  padding: 0 30px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+ 
+}
+
+nav ul{
+  width: 100%;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+
+nav li{
+  height: 40px;
+  align-items: center;
+}
+
+nav a{
+  height: 0%;
+  padding: 0 30px;
+  margin-top: 0px;
+  text-decoration: none;
+  display: flex;
+  color: rgb(255, 255, 255);
+
+}
+
+nav a:hover{
+  color: #FFA100;
+}
+
+
+.quote-btn {
+  background-color: #FFA100;
+  color: #000000;
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  align-items: centre;
+  display: inline;
+  
+}
+.quote-btn:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Toggle button container */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/* Toggle icons */
+.menu-toggle img {
+  width: 50px;
+  height: auto;
+  display: none;
+}
+
+#menu-icon {
+  display: block;
+}
+
+.sidebar {
+  text-decoration: none;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 200px;
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 60px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar a:not(.quote-btn){
+  margin: 20px 0;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar .menu {
+  width: 50px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.sidebar a:not(.quote-btn):hover{
+  color: #ff7f00;
+}
+
+
+.sidebar a:hover .menu {
+  transform: scale(1.2);
+}
+
+sidebar a:visited,
+.sidebar a:active,
+.sidebar a:focus,
+.sidebar a:hover {
+  text-decoration: none;
+  outline: none;
+}
+/* Responsive */
+@media (max-width: 1400px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+}
+  
+
+    .logo {
+     width: auto;
+     height: 120px;
+     margin-right: auto;
+    }
+
+    .hero {
+      background: radial-gradient(#FFA100, #000);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      height: 400px;
+      align-items: center;
+      align-content: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero button {
+      background: #fff;
+      color: #000000;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #cdcdcd;
+    
+    }
+
+    .hero button a{
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* ---------- us ---------- */
+.about-us .container{
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 60px; /* space between image and text */
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+ 
+} 
+ 
+.text-about-us{
+  width: 550px;
+  display: inline;
+  justify-content: right;
+  text-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+.about-us h2{
+  color: #FFA100;
+  font-size: 30px;
+}
+
+.about-us {
+  color: white;
+}
+.love-what-we-do{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 350px;
+  display: flex;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .about-us .container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .text-about-us {
+    width: 100%;
+    max-width: 90%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .love-what-we-do {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: #000000;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    .our-services{
+      color: #FFA100;
+      text-align: center;
+      align-items: center;
+      font-size: 2.0rem;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      margin: 15px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #FFA100;
+    }
+
+    /*-----follow us-----*/
+ 
+ .follow-us{
+    height: fit-content;
+    margin: 30px;
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+ }
+
+ .h2-follow{
+    color: #FFA100;
+  font-size: 20px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+ }
+
+ .follow-us p {
+    font-size: 1rem;
+ }
+
+ .gmb a{
+    text-decoration: none;
+    color: #FFA100;
+ }
+
+ .gmb a:hover{
+    color: #fff;
+ }
+
+    /* ---------- REVIEWS ---------- */
+.reviews {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+  margin: 30px;
+}
+
+.review-card {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-left: 5px solid #FFA100;
+}
+
+    /* ---------- FAQ ---------- */
+.faq {
+  background: #f9f9f9;
+  padding: 60px 0;
+  margin: 30px;
+  margin-top: 90px;
+  
+}
+
+.faq h2{
+  margin: 10px;
+  text-align: center;
+}
+.faq-item {
+  margin-bottom: 20px;
+  margin: 30px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  font-weight: bold;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.faq-answer {
+  display: none;
+  background: #fff;
+  padding: 10px 15px;
+  margin-top: 5px;
+  border-left: 3px solid #FFA100;
+}
+/* ---------- FOOTER ---------- */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 30px ;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo img {
+  width: 250px;
+}
+.footer-socials{
+  display: flex;
+  justify-content: center; /* centers icons horizontally */
+  gap: 10px; /* space between icons */
+  align-items: center;
+  padding: 10px;
+  flex-direction: row;
+}
+.footer-socials a {
+  color: #FFA100;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+
+.footer-socials a:hover{
+ color: white;
+}
+
+.footer-contact-form{
+  padding: 20px;
+}
+
+.footer-contact-form input,
+.footer-contact-form textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  
+}
+
+@media (max-width: 1280px) {
+  .footer-contact-form {
+    width: 80%;
+    padding: 0px 10px; /* Add inner spacing on mobile */
+    margin-left: 10px;
+  }
+  
+}
+
+.footer-contact-form button {
+  background: #FFA100;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.footer-contact-form button:hover{
+  background-color: white;
+}
+
+/*------terms and conditions----*/
+
+.terms{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.terms a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0;
+ 
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+.copyright{
+   color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+  .footer-container {
+    flex-direction: inline;
+    align-items: center;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="handy4london inline logo.png" class="logo">
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="services.html">Services</a></li>
+           <li><a href="#">Need a Booking</a></li>
+          <li><a href="#">Contact</a></li>
+         <li><a href="get-a-quote.html" class="quote-btn">Get a Free Quote</a></li>
+        </ul>
+        </nav>
+   <!-- Toggle button -->
+<div class="menu-toggle" onclick="toggleSidebar()">
+  <img id="menu-icon" src="menu.png" alt="Menu" />
+  <img id="close-icon" src="close.png" alt="Close" />
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about-us.html">About Us</a>
+  <a href="blog.html">Blog</a>
+  <a href="services.html">Services</a>
+  <a href="#">Contact</a>
+  <a href="get-a-quote.html" class="quote-btn">Get a Free Quote</a>
+</div>
+ 
+     </div>
+     
+
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Your Local, Reliable Handyman</h2>
+    <p>Painting, carpentry, and odd jobs from Uxbridge to Central London.</p>
+    <button><a href="get-a-quote.html">Get a Free Quote</a></button>
+  </section>
+
+  
+  <!--About Us Section -->
+<section class="about-us">
+  <div class="container">
+    <img src="love what we do.png" class="love-what-we-do" alt="Working with love">
+    <div class="text-about-us">
+      <h2>A little about us</h2>
+      <p>At Handy 4 London, we’re all about getting things done fast, right, and with a smile. From small repairs to bigger home improvements,
+         we bring reliable handyman services straight to your door. 
+        Based in London, we take pride in quality work, honest prices, and making your space better, one fix at a time.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section  id="services">
+   <div class="our-services">
+    <p><b>The services we offer</b></p>
+  </div>
+  <div class="services">
+    <div class="service-card">
+      <h3>Painting</h3>
+      <p>Clean, detailed, and long-lasting painting work for any space.</p>
+    </div>
+    <div class="service-card">
+      <h3>Carpentry</h3>
+      <p>Custom shelves, doors, repairs, and more — all woodwork handled.</p>
+    </div>
+    <div class="service-card">
+      <h3>Odd Jobs</h3>
+      <p>No job too small — from curtain rails to flat packs, we’ve got you covered.</p>
+    </div>
+    <div class="service-card">
+      <h3>Locksmith</h3>
+      <p>Basic locksmith services for padlocks available</p>
+    </div>
+    </div>
+  </section>
+
+  <!--follow us- GMB-->
+  <section class="follow-us">
+    <div class="h2-follow">
+    <h2>Follow Us!</h2>
+    </div>
+    <div class="footer-socials">
+        <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/handy4london5/">Instagram</a>
+        <i class="fab fa-facebook"></i>
+            <a href="#">Facebook</a>
+        <i class="fab fa-tiktok"></i>
+            <a href="https://www.tiktok.com/@handy4london5?is_from_webapp=1&sender_device=pc">TikTok</a>
+        <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/message/W7VLVNVVLF46M1">WhatsApp</a>
+    </div>
+    <div class="gmb">
+        <p>To view our work visit <a href="https://g.co/kgs/WDNcJRz"><strong>Google my business.</strong></a></p>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="review-card">
+        <p>"Quick, friendly and very professional! Will definitely hire again."</p>
+        <strong>— Maria L.</strong>
+      </div>
+      <div class="review-card">
+        <p>"Fixed everything I needed in one visit. Highly recommend!"</p>
+        <strong>— James W.</strong>
+      </div>
+    </div>
+  </section>
+
+<!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">What areas do you cover?</button>
+        <div class="faq-answer">We serve from Uxbridge to Central London.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What services do you offer?</button>
+        <div class="faq-answer">Carpentry, painting, odd jobs, and more. Just ask!</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-logo">
+        <img src="Handy 4 London.png" alt="Handy 4 London Logo">
+      </div>
+      <div class="footer-socials">
+        <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/handy4london5/">Instagram</a>
+        <i class="fab fa-facebook"></i>
+            <a href="#">Facebook</a>
+        <i class="fab fa-tiktok"></i>
+            <a href="https://www.tiktok.com/@handy4london5?is_from_webapp=1&sender_device=pc">TikTok</a>
+        <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/message/W7VLVNVVLF46M1">WhatsApp</a>
+      </div>
+      <div class="footer-contact-form">
+        <p>Contact Us</p>
+        <form action="https://formsubmit.co/handy4london5@gmail.com" method="POST">
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        
+      </div>
+    </div>
+    </footer>
+  
+    <div class="terms">
+       <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p class="copyright">&copy; 2025 Handy4London. All rights reserved. Designed and developed by Beatrice Man.</p>
+        </div>
+</body>
+</html>
