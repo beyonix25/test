@@ -17,6 +17,25 @@
   }
 
 
+ 
+ // FAQ Toggle
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(button => {
+  button.addEventListener('click', () => {
+    // Find the next sibling which is the answer div
+    const answer = button.nextElementSibling;
+
+    // Toggle display of the answer
+    if (answer.style.display === 'block') {
+      answer.style.display = 'none';
+    } else {
+      answer.style.display = 'block';
+    }
+  });
+});
+
+
   const fileInput = document.getElementById('fileUpload');
   const fileInfo = document.getElementById('fileInfo');
   const fileName = document.getElementById('fileName');
@@ -38,46 +57,46 @@
   });
 
  
+  function showSuccessBanner() {
+  const banner = document.getElementById('form-success-banner');
+  banner.classList.remove('hidden');
 
- 
- // FAQ Toggle
-const faqButtons = document.querySelectorAll(".faq-question");
-
-faqButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const answer = button.nextElementSibling;
-
-    if (answer.style.display === "block") {
-      answer.style.display = "none";
-    } else {
-      answer.style.display = "block";
-    }
-  });
-});
+  setTimeout(() => {
+    banner.classList.add('hidden');
+  }, 2000);
+}
 
 
+  const form = document.getElementById('contact-form');
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault(); // stop normal submit
 
-  const form = document.getElementById('quoteForm');
-  const banner = document.getElementById('thankYouBanner');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
     const formData = new FormData(form);
+
+    // Send form data using fetch
     const response = await fetch(form.action, {
-      method: form.method,
+      method: "POST",
       body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: {
+        'Accept': 'application/json'
+      }
     });
 
     if (response.ok) {
+      showSuccessBanner();
       form.reset();
-      banner.style.display = 'block';
-      setTimeout(() => {
-        banner.style.display = 'none';
-      }, 5000); // hide after 5 seconds
     } else {
       alert('Something went wrong. Please try again.');
     }
   });
+
+  function showSuccessBanner() {
+    const banner = document.getElementById('form-success-banner');
+    banner.classList.remove('hidden');
+
+    setTimeout(() => {
+      banner.classList.add('hidden');
+    }, 2000);
+  }
 
